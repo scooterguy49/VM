@@ -1,2 +1,2 @@
 # VM
-Creating a virtual machine for project in secure software engineering.
+The goal of this project is to create a virtual machine for a project in secure software engineering. It will display aspects from the class.
