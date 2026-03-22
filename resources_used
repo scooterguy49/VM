@@ -7,3 +7,67 @@ Used For:
 How We Used It:
 Notes:
 --------------------------------------
+--------------------------------------
+Resource Name: Python Official Documentation
+Link: https://docs.python.org/3/
+Type: Documentation
+Used For: Understanding Python syntax, functions, and input handling
+How We Used It: Used as a reference when developing the vulnerable and fixed login applications, specifically for handling user input and control flow logic
+Notes: Provided reliable and official guidance for Python programming concepts used in the lab
+--------------------------------------
+--------------------------------------
+Resource Name: OWASP Top 10: Broken Access Control
+Link: https://owasp.org/www-project-top-ten/
+Type: Article / Documentation
+Used For: Understanding authentication and authorization vulnerabilities
+How We Used It: Referenced to explain how improper authorization and hidden functionality can lead to privilege escalation vulnerabilities
+Notes: Helped connect the lab to real-world security risks and industry standards
+--------------------------------------
+--------------------------------------
+Resource Name: GeeksforGeeks – Authentication vs Authorization
+Link: https://www.geeksforgeeks.org/authentication-vs-authorization/
+Type: Article
+Used For: Clarifying the difference between authentication and authorization
+How We Used It: Used to support explanation of why the backdoor violates proper authentication and authorization processes
+Notes: Useful for simplifying concepts for beginner-level understanding
+--------------------------------------
+--------------------------------------
+Resource Name: VirtualBox Documentation
+Link: https://www.virtualbox.org/wiki/Documentation
+Type: Documentation / Tool
+Used For: Setting up and configuring the virtual machine environment
+How We Used It: Used to install Ubuntu, configure shared folders, and ensure a consistent environment for running lab applications
+Notes: Essential for creating the isolated testing environment
+--------------------------------------
+--------------------------------------
+Resource Name: Ubuntu Documentation
+Link: https://help.ubuntu.com/
+Type: Documentation
+Used For: Navigating the Linux environment and terminal commands
+How We Used It: Referenced for file navigation, running Python scripts, and managing the virtual machine environment
+Notes: Helpful for understanding Linux-based development workflows
+--------------------------------------
+--------------------------------------
+Resource Name: Nano Text Editor Guide
+Link: https://www.nano-editor.org/docs.php
+Type: Documentation / Tool
+Used For: Editing source code within the virtual machine
+How We Used It: Used to open, modify, and save Python files directly in the terminal environment
+Notes: Simple and efficient tool for editing code in a VM environment
+--------------------------------------
+--------------------------------------
+Resource Name: Stack Overflow
+Link: https://stackoverflow.com/
+Type: Article / Community Resource
+Used For: Troubleshooting errors and understanding Python behavior
+How We Used It: Used to resolve minor coding issues and clarify implementation details during development
+Notes: Community-driven resource used for debugging and problem-solving
+--------------------------------------
+--------------------------------------
+Resource Name: GitHub
+Link: https://github.com/
+Type: Tool / Repository Platform
+Used For: Referencing similar security lab structures and project organization
+How We Used It: Reviewed existing repositories to understand how to structure lab files, documentation, and code organization
+Notes: Useful for seeing real-world project layouts and best practices
+--------------------------------------
