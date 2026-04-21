@@ -1,0 +1,248 @@
+Lab 1 Test Cases: Hidden Functionality and Improper Authorization
+
+Purpose:
+These test cases verify the behavior of the vulnerable and fixed versions of the Lab 1 application. They are designed to show normal authentication behavior, exploitation of the hidden functionality, and confirmation that the vulnerability has been removed after remediation.
+
+Test Environment:
+- Platform: Ubuntu virtual machine
+- Language: Python 3
+- Application Files:
+  - vulnerable_app.py
+  - fixed_app.py
+
+--------------------------------------------------
+Test Case 1: Valid Standard User Login
+--------------------------------------------------
+Test ID: L1-TC-01
+Objective:
+Verify that a standard user can log in successfully and access only non-admin functionality.
+
+Input:
+Username: alice
+Password: alice123
+
+Steps:
+1. Run the application.
+2. Enter username "alice".
+3. Enter password "alice123".
+4. Select option 1 to view profile.
+5. Select option 2 to attempt admin panel access.
+
+Expected Result:
+- Login is successful.
+- User role is displayed as "user".
+- Profile can be viewed.
+- Admin panel access is denied.
+
+Observed Result:
+____________________________
+
+Pass/Fail:
+____________________________
+
+--------------------------------------------------
+Test Case 2: Valid Admin User Login
+--------------------------------------------------
+Test ID: L1-TC-02
+Objective:
+Verify that a legitimate admin user can log in successfully and access admin functionality.
+
+Input:
+Username: bob
+Password: bob123
+
+Steps:
+1. Run the application.
+2. Enter username "bob".
+3. Enter password "bob123".
+4. Select option 2 to access the admin panel.
+
+Expected Result:
+- Login is successful.
+- User role is displayed as "admin".
+- Admin panel is accessible.
+
+Observed Result:
+____________________________
+
+Pass/Fail:
+____________________________
+
+--------------------------------------------------
+Test Case 3: Valid Secondary Standard User Login
+--------------------------------------------------
+Test ID: L1-TC-03
+Objective:
+Verify that another standard user can log in correctly and is still restricted from admin access.
+
+Input:
+Username: charlie
+Password: charlie123
+
+Steps:
+1. Run the application.
+2. Enter username "charlie".
+3. Enter password "charlie123".
+4. Select option 2 to attempt admin panel access.
+
+Expected Result:
+- Login is successful.
+- User role is displayed as "user".
+- Admin panel access is denied.
+
+Observed Result:
+____________________________
+
+Pass/Fail:
+____________________________
+
+--------------------------------------------------
+Test Case 4: Invalid Login Attempt
+--------------------------------------------------
+Test ID: L1-TC-04
+Objective:
+Verify that invalid credentials are rejected.
+
+Input:
+Username: unknown
+Password: wrongpass
+
+Steps:
+1. Run the application.
+2. Enter username "unknown".
+3. Enter password "wrongpass".
+
+Expected Result:
+- Login fails.
+- Access is denied.
+- No menu is displayed.
+
+Observed Result:
+____________________________
+
+Pass/Fail:
+____________________________
+
+--------------------------------------------------
+Test Case 5: Hidden Functionality Exploit in Vulnerable Version
+--------------------------------------------------
+Test ID: L1-TC-05
+Objective:
+Demonstrate that the vulnerable application grants unauthorized admin access through the hidden password.
+
+Input:
+Username: testuser
+Password: letmein
+
+Steps:
+1. Run vulnerable_app.py.
+2. Enter username "testuser".
+3. Enter password "letmein".
+4. Select option 2 to access the admin panel.
+
+Expected Result:
+- Login should not succeed because the username is invalid.
+
+Actual Vulnerable Behavior:
+- The application grants access.
+- The user is assigned the "admin" role.
+- The admin panel becomes accessible.
+
+Observed Result:
+____________________________
+
+Pass/Fail:
+____________________________
+
+--------------------------------------------------
+Test Case 6: Hidden Functionality Attempt After Fix
+--------------------------------------------------
+Test ID: L1-TC-06
+Objective:
+Verify that the fixed application no longer grants access through the hidden password.
+
+Input:
+Username: testuser
+Password: letmein
+
+Steps:
+1. Run fixed_app.py.
+2. Enter username "testuser".
+3. Enter password "letmein".
+
+Expected Result:
+- Login fails.
+- Access is denied.
+- No admin role is granted.
+- No menu is displayed.
+
+Observed Result:
+____________________________
+
+Pass/Fail:
+____________________________
+
+--------------------------------------------------
+Test Case 7: Admin Access Restriction for Standard Users
+--------------------------------------------------
+Test ID: L1-TC-07
+Objective:
+Verify that standard users cannot access the admin panel even after successful login.
+
+Input:
+Username: alice
+Password: alice123
+
+Steps:
+1. Run the application.
+2. Log in as "alice".
+3. Select option 2 for admin panel access.
+
+Expected Result:
+- Login is successful.
+- Admin panel access is denied.
+
+Observed Result:
+____________________________
+
+Pass/Fail:
+____________________________
+
+--------------------------------------------------
+Test Case 8: Menu Exit Function
+--------------------------------------------------
+Test ID: L1-TC-08
+Objective:
+Verify that the user can exit the program normally after login.
+
+Input:
+Username: alice
+Password: alice123
+Menu Option: 3
+
+Steps:
+1. Run the application.
+2. Log in with valid credentials.
+3. Select option 3.
+
+Expected Result:
+- The application displays a goodbye message.
+- The program exits cleanly.
+
+Observed Result:
+____________________________
+
+Pass/Fail:
+____________________________
+
+--------------------------------------------------
+Summary of Test Coverage
+--------------------------------------------------
+These test cases validate:
+- Successful standard user authentication
+- Successful admin authentication
+- Rejection of invalid credentials
+- Presence of the hidden backdoor in the vulnerable version
+- Removal of the hidden backdoor in the fixed version
+- Proper authorization enforcement for admin-only functionality
+- Basic application flow and usability

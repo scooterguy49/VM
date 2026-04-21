@@ -1,0 +1,77 @@
+# Lab 1: Hidden Functionality and Improper Authorization
+
+## Introduction
+
+This lab focuses on identifying and mitigating hidden functionality within a software system, specifically in the context of authentication and authorization. Hidden functionality, commonly referred to as a backdoor, is any undocumented or unintended behavior that allows access to a system outside of its intended design. Such vulnerabilities can exist even when the visible portions of the application appear to function correctly.
+
+The purpose of this lab is to demonstrate how insecure design decisions can introduce unauthorized access paths and how those paths can be detected and removed through code analysis and secure software engineering practices. Students are required to analyze a provided application, identify the vulnerability, and modify the code to enforce proper authentication and authorization.
+
+---
+
+## Description of the Vulnerable Application
+
+The application used in this lab is a Python-based login system that implements basic role-based access control. The system defines a set of users, each associated with a password and a role. The roles determine access to specific functionality within the application, such as viewing a profile or accessing an administrative panel.
+
+Under normal operation, users must enter a valid username and password combination to gain access to the system. Once authenticated, the application assigns a role to the user and restricts access to functionality based on that role. For example, only users with the "admin" role are permitted to access the administrative panel.
+
+However, the application contains a hidden authentication path within the login function. This path allows any user to gain administrative access by entering a specific password value, regardless of the username provided. This behavior is not documented and bypasses the intended authentication process.
+
+---
+
+## Vulnerability Analysis
+
+The vulnerability in this lab is an example of hidden functionality or a backdoor. Specifically, the login function includes a conditional statement that checks for a hardcoded password value. If this value is provided, the application grants administrative privileges without verifying the username or matching credentials against the stored user data.
+
+This design introduces a critical security flaw. It allows unauthorized users to bypass authentication and obtain elevated privileges. Since the behavior is not visible through standard use of the application, it may go unnoticed during normal testing. The vulnerability can only be identified through careful inspection of the source code or through exploratory testing with unexpected inputs.
+
+From a secure software engineering perspective, this violates several important principles. The principle of least privilege is violated because users are granted more access than necessary. The principle of secure design is also violated, as the system includes undocumented behavior that undermines its intended functionality. Additionally, the presence of hidden logic reduces transparency and makes the system more difficult to audit and maintain.
+
+---
+
+## Exploitation of the Vulnerability
+
+To demonstrate the vulnerability, the application was executed and tested using both valid and invalid credentials. When valid credentials were entered, the system behaved as expected, granting access based on the user's role.
+
+However, when an arbitrary username was entered along with the password "letmein", the application granted administrative access. This occurred even when the username did not exist in the system. Once access was granted, the user was able to interact with administrative functionality, including viewing system configuration information.
+
+This behavior confirms that the authentication process can be bypassed entirely through the hidden condition. The exploit does not require advanced technical knowledge and can be triggered with minimal effort, making it a high-risk vulnerability.
+
+---
+
+## Remediation and Secure Implementation
+
+To address the vulnerability, the hidden authentication path was removed from the login function. The updated implementation ensures that all access is granted only after verifying both the username and password against the defined user database.
+
+In the secure version of the application, no alternative authentication paths exist. Users must provide valid credentials, and their assigned roles determine their level of access. Administrative functionality is restricted exclusively to users whose roles are explicitly defined as "admin".
+
+This change restores the integrity of the authentication process and ensures that access control is enforced consistently. The removal of hidden functionality also improves the transparency of the code, making it easier to review and maintain.
+
+---
+
+## Testing and Validation
+
+After implementing the fix, the application was tested using a series of predefined test cases. These tests verified that valid users could still log in and access appropriate functionality, while invalid users were denied access.
+
+Additionally, attempts to exploit the system using the previously identified password value were unsuccessful. The application correctly rejected all unauthorized login attempts and did not grant administrative privileges without valid credentials.
+
+These results confirm that the vulnerability has been successfully mitigated and that the system now enforces proper authentication and authorization.
+
+---
+
+## Secure Software Engineering Concepts
+
+This lab reinforces several key concepts in secure software engineering. First, it highlights the importance of explicit authentication and authorization logic. All access to protected resources must be clearly defined and consistently enforced.
+
+Second, the lab demonstrates the risks associated with hidden functionality. Undocumented behavior can introduce serious vulnerabilities that are difficult to detect and can compromise the security of the entire system.
+
+Third, the lab emphasizes the value of code review as a security practice. Since the vulnerability was not immediately visible through normal use, it required inspection of the source code to identify the issue. This underscores the importance of thorough review processes during development.
+
+Finally, the lab illustrates how secure design principles, such as least privilege and secure defaults, can prevent vulnerabilities when applied correctly.
+
+---
+
+## Conclusion
+
+Lab 1 provides a practical introduction to hidden functionality and improper authorization within a software system. Through hands-on analysis and remediation, students gain experience identifying vulnerabilities that arise from insecure design decisions rather than implementation errors.
+
+By removing the hidden authentication path and enforcing proper access control, the application is transformed into a more secure and predictable system. This lab establishes a foundation for understanding more complex vulnerabilities in subsequent labs and highlights the importance of secure software engineering practices in real-world development.
