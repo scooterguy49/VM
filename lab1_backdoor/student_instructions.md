@@ -210,6 +210,60 @@ Insert the following screenshots into your worksheet:
 
 ---
 
+## Section 9: Verifying Security Enhancements
+
+### Step 13: Test Login Attempt Limits
+
+Run the fixed version of the program:
+
+python3 fixed_app.py
+
+Enter incorrect credentials multiple times.
+
+Observe:
+- Access is denied after each failed attempt  
+- After the maximum number of attempts, the system locks access  
+
+Go to your worksheet and record:
+- How many attempts are allowed  
+- What message is displayed when access is locked  
+
+---
+
+### Step 14: Review the Audit Log
+
+Locate the file created by the program:
+
+lab1_audit.log
+
+Open the file using a terminal command or text editor:
+
+Linux / VM:
+cat lab1_audit.log
+
+Windows:
+type lab1_audit.log
+
+Observe the contents of the log file.
+
+Go to your worksheet and answer:
+- What types of events are recorded (e.g., login success, failure, lockout, admin access)  
+- Why logging is important for system security  
+
+---
+
+### Step 15: Analyze Security Improvements
+
+Go to your worksheet and answer:
+
+- How does limiting login attempts improve security  
+- How does logging improve system monitoring and accountability  
+- Why these features are important in real-world systems  
+
+These steps demonstrate how secure systems not only prevent unauthorized access but also monitor and record activity to detect potential threats.
+
+---
+
 ## Final Submission
 
 Before submitting, ensure:
