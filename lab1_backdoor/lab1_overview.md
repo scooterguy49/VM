@@ -38,6 +38,8 @@ Second, the presence of hidden functionality violates the principle of least pri
 
 Third, the lab demonstrates the importance of transparency and maintainability in code. Undocumented behavior can be difficult to detect and may remain in a system for extended periods if proper review processes are not in place.
 
+In the secure implementation, additional defensive measures are introduced to strengthen the authentication process. These include limiting the number of failed login attempts to reduce the risk of brute-force attacks and implementing audit logging to track authentication events. These enhancements demonstrate how secure systems must incorporate both prevention and monitoring mechanisms.
+
 Finally, this lab emphasizes the role of code review as a critical security practice. Since the vulnerability is not immediately visible through normal program execution, it must be identified through careful inspection of the source code.
 
 ---
