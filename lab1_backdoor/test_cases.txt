@@ -264,6 +264,36 @@ Pass/Fail:
 ____________________________
 
 --------------------------------------------------
+Test Case 10: Audit Logging Verification
+--------------------------------------------------
+Test ID: L1-TC-10
+
+Objective:
+Verify that authentication events are recorded in the audit log.
+
+Steps:
+1. Run fixed_app.py.
+2. Perform:
+   - one failed login
+   - one successful login
+   - one admin panel access attempt
+3. Open the file lab1_audit.log.
+
+Expected Result:
+- Log file is created.
+- Entries include:
+  - LOGIN_FAILURE
+  - LOGIN_SUCCESS
+  - ADMIN_PANEL_ACCESS or ADMIN_PANEL_DENIED
+  - ACCOUNT_LOCKOUT if applicable
+
+Observed Result:
+____________________________
+
+Pass/Fail:
+____________________________
+
+--------------------------------------------------
 Summary of Test Coverage
 --------------------------------------------------
 These test cases validate:
