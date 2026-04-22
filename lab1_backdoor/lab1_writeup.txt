@@ -1,3 +1,5 @@
+The following document provides a comprehensive writeup of Lab 1, including a detailed explanation of the vulnerability, exploitation process, remediation, and relevant secure software engineering concepts. This material supplements the results presented in the main report and provides additional context for instructional and evaluation purposes.
+
 # Lab 1: Hidden Functionality and Improper Authorization
 
 ## Introduction
@@ -42,7 +44,7 @@ This behavior confirms that the authentication process can be bypassed entirely 
 
 To address the vulnerability, the hidden authentication path was removed from the login function. The updated implementation ensures that all access is granted only after verifying both the username and password against the defined user database.
 
-In the secure version of the application, no alternative authentication paths exist. Users must provide valid credentials, and their assigned roles determine their level of access. Administrative functionality is restricted exclusively to users whose roles are explicitly defined as "admin".
+In the secure version of the application, no alternative authentication paths exist. Users must provide valid credentials, and their assigned roles determine their level of access. Administrative functionality is restricted exclusively to users whose roles are explicitly defined as "admin". These enhancements demonstrate that secure software engineering involves not only removing vulnerabilities, but also implementing additional safeguards that strengthen the overall resilience of the system.
 
 This change restores the integrity of the authentication process and ensures that access control is enforced consistently. The removal of hidden functionality also improves the transparency of the code, making it easier to review and maintain.
 
@@ -74,4 +76,4 @@ Finally, the lab illustrates how secure design principles, such as least privile
 
 Lab 1 provides a practical introduction to hidden functionality and improper authorization within a software system. Through hands-on analysis and remediation, students gain experience identifying vulnerabilities that arise from insecure design decisions rather than implementation errors.
 
-By removing the hidden authentication path and enforcing proper access control, the application is transformed into a more secure and predictable system. This lab establishes a foundation for understanding more complex vulnerabilities in subsequent labs and highlights the importance of secure software engineering practices in real-world development.
+By removing the hidden authentication path and enforcing proper access control, the application is transformed into a more secure and predictable system. This lab establishes a foundation for understanding more complex vulnerabilities in subsequent labs and highlights the importance of secure software engineering practices in real-world development. These enhancements demonstrate that secure software engineering involves not only removing vulnerabilities, but also implementing additional safeguards that strengthen the overall resilience of the system.
