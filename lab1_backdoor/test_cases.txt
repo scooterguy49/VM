@@ -236,6 +236,34 @@ Pass/Fail:
 ____________________________
 
 --------------------------------------------------
+Test Case 9: Login Attempt Limit Enforcement
+--------------------------------------------------
+Test ID: L1-TC-09
+
+Objective:
+Verify that the system enforces a maximum number of failed login attempts.
+
+Input:
+Username: testuser
+Password: wrongpass (repeated)
+
+Steps:
+1. Run fixed_app.py.
+2. Enter invalid credentials three times.
+3. Observe system behavior after maximum attempts.
+
+Expected Result:
+- Access is denied after each attempt.
+- After the third attempt, the system locks access.
+- No further login attempts are allowed.
+
+Observed Result:
+____________________________
+
+Pass/Fail:
+____________________________
+
+--------------------------------------------------
 Summary of Test Coverage
 --------------------------------------------------
 These test cases validate:
