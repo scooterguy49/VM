@@ -1,0 +1,88 @@
+# Lab 3: Buffer Overflow
+
+## Objective:
+The purpose of this lab is to understand how a buffer overflow occurs. It occurs when a program writes more data into a fixed-size buffer than it can hold. Students will compare secure and vulnerable input handling methods and observe how improper bounds checking can corrupt adjacent memory such as a canary value and return address.
+
+---
+
+## Files provided:
+- Buffer_Overflow.py
+- Lab3_Submission_Template.docx
+
+---
+
+## Step 0: Create Your Lab Submission File
+
+1. Locate the file Lab3_Submission_Template.docx
+2. Make a copy of the file  
+3. Rename your copy using the format:
+
+   Lab1_<YourName>.docx
+
+   Example:
+   Lab1_JohnDoe.docx
+
+4. Open your copy. You will complete it as you work through the lab.
+
+## Step 1: Run the Program
+
+Open a terminal in the lab folder and run:
+python3 Buffer_Overflow.py
+
+Go to Section 1, Question 1-4 in your worksheet and answer the questions.
+
+## Step 2: Initial Program Observation
+
+When the program begins, it will display a menu with five options:
+1. Show fresh memory layout
+2. Safe copy
+3. Vulnerable copy
+4. Example overflow demo
+5. Exit
+
+Observe what the program displays.
+
+Go to Section 2, Question 5-7 in your worksheet and answer the questions.
+
+## Step 3: Option 1 - Show Fresh Memory Layout
+
+Select Option 1 and record the displayed memory values.
+
+Go to Section 3, Question 8-10 in your worksheet and answer the questions.
+
+## Step 4: Option 2 - Safe Copy
+
+Select Option 2 and enter the following input: HELLO
+Note the outputs.
+
+Go to Section 4, Question 11-13 in your worksheet and answer the questions.
+
+## Step 5 Option 3 - Vulnerable Copy
+
+Select Option 3 and enter the following input: ABCDEFGHIJKL
+Note the outputs.
+
+Go to Section 5, Questions 14-17 in your worksheet and answer the questions.
+
+## Step 6 Option 4 - Example Overflow Demo
+
+Select Option 4 and observe what the ouput is.
+
+Go to Section 6, Questions 18-20 in your worksheet and answer the questions.
+
+## Step 7 - Secure Software Principles
+
+Go to Section 7, Questions 21-22 in your worksheet and answer the questions.
+
+## Step 8 - Reflection and Conclusion
+
+Go to Section 8, Questions 23-25 in your worksheet and answer the questions.
+
+## Step 9 - Evidence
+
+Provide screenshots for:
+1. Fresh memory layout
+2. Safe Copy with normal input
+3. Vulernable copy with overflow input
+4. Example Overflow Demo
+5. Secure code implementing bounds checking
