@@ -57,7 +57,7 @@ def main():
 
         # Virus scanning step
         if is_malicious(user_input):
-            print("⚠️ WARNING: Malicious command detected and blocked!")
+            print("WARNING: Malicious command detected and blocked!")
             continue
 
         # Command handling
