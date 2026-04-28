@@ -1,5 +1,3 @@
-from datetime import datetime
-
 users = {
     "alice": {"password": "alice123", "role": "user"},
     "bob": {"password": "bob123", "role": "admin"},
